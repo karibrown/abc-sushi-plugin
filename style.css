@@ -1,0 +1,1400 @@
+/*
+Theme Name: abc-sushi
+Theme URI: http://underscores.me/
+Author: Kariann Brown, Amrita Singh, Dewshan Sarathchndra
+Author URI: http://underscores.me/
+Description: Assignment 2: Restaurant WordPress Theme
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: abc-sushi
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something mol, have fun, and share what you've learned with others.
+
+abc-sushi is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Asides
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,400italic);
+html {
+	font-family: 'Josefin Sans', sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust:     100%;
+}
+
+body {
+	margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+	display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+h1{
+	padding-top:0.5em;
+}
+
+[hidden],
+template {
+	display: none;
+}
+
+a {
+	background-color: black
+	opacity: 0.85;
+	
+;
+}
+
+a:active,
+a:hover {
+	outline: 0;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn {
+	font-style: italic;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+mark {
+	background: #ff0;
+	color: #000;
+}
+
+small {
+	font-size: 80%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+img {
+	border: 0;
+}
+.backstretch{
+	max-width:100%;
+	position: absolute; 
+	}
+	
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+figure {
+	margin: 1em 40px;
+}
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+}
+
+pre {
+	overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+
+button {
+	overflow: visible;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+	cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input {
+	line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+	box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+fieldset {
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+}
+
+optgroup {
+	font-weight: bold;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td,
+th {
+	padding: 0;
+}
+.comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next{
+	padding-right: 0.5em;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	color: black;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
+p {
+	margin-bottom: 1.5em;
+	padding-bottom:0.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: #fff; /* Fallback for when there is no custom background color defined. */
+	
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+blockquote,
+q {
+	quotes: "" "";
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e6e6e6;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+	color: rgba(0, 0, 0, .8);
+	font-size: 12px;
+	font-size: 0.75rem;
+	line-height: 1;
+	padding: .6em 1em .4em;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+}
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	border-color: #aaa #bbb #bbb;
+	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+select {
+	border: 1px solid #ccc;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"] {
+	padding: 3px;
+}
+
+textarea {
+	padding-left: 3px;
+}
+
+
+input[type="color1"]{
+
+color:green;
+background-color:blue;
+}
+
+
+option[value="1"]{
+
+color:green;
+background-color:blue;
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+	color: royalblue;
+}
+
+a:visited {
+	color: #F2CF1E;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: #F2CF1E;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+
+.main-navigation {
+	clear: both;
+	display: inline-block;
+	float: center;
+	width: 100%;
+	background-color: black;
+	font-family: 'Josefin Sans', sans-serif;
+	
+}
+
+.main-navigation ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+	
+}
+
+.main-navigation li {
+	float: right;
+	position: relative;
+	padding-left: 0.2em;
+	padding-right: 1em;
+	color: red;
+	width: 10.5em;
+	display: inline-block;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.main-navigation a {
+	display: inline-block;
+	text-decoration: none;
+	padding:1em;
+	
+}
+
+.main-navigation a:visited{
+	
+	color: white;
+}
+.main-navigation a:hover{
+	color:red;
+}
+
+.sub-menu{
+margin-top: 2em;
+padding-top:2em;
+}
+
+.main-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 1.5em;
+	left: -999em;
+	z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul ul li {
+	background:rgba(0, 0, 0, 0.7);
+
+}
+
+.main-navigation li:hover > a,
+.main-navigation li.focus > a {
+color:orange;
+}
+
+/*.main-navigation ul ul :hover > a,
+.main-navigation ul ul .focus > a {
+color:green;
+}*/
+
+/*.main-navigation ul ul a:hover,
+.main-navigation ul ul a.focus {
+}*/
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: 100%;
+}
+
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a,
+.main-navigation .current-menu-ancestor > a {
+}
+
+
+/*----------------------------
+ sidebar
+ ------------------------------*/
+
+aside#secondary{
+background:black;
+clear:both;
+display:block;
+opacity: 0.95;
+color:white;
+}
+/* -------------------------------------
+site title 
+--------------------------------*/
+
+
+
+.site-title{
+	padding: 0em;
+	float: left;
+	width:8em;
+	height:1em;
+	font-size:30px;
+	background-color: black;
+	margin: 0;
+	font-family: 'Josefin Sans', sans-serif;
+
+
+}
+
+.site-branding{
+	color: orange;
+	padding: 3em;
+
+}
+
+.site-description{
+	padding-left: 0em;
+	padding-top:3em;
+	float: left;
+	font-size: 20px;
+	background-color: black;
+	margin: 0;
+	width: 70%;
+	font-family: 'Josefin Sans', sans-serif;
+}
+#masthead.site-header{
+	background-color: black;
+	height:12em;
+}
+
+
+
+/*-------------------------------
+footer site info 
+----------------------------------*/
+.site-info{
+	padding:2em;
+	float: center;
+	float: right;
+	background-color:black;
+	color:white;
+	position:relative;
+	
+}
+
+#colophon.site-footer{
+	background-color:black;
+	height:5.5em
+}
+
+/*-----------------------------
+content area 
+-----------------------------*/
+
+
+#primary.content-area{
+	float: right;
+	margin:0px;
+	padding-right:2em;
+	width:100%;
+	font-size:16px;
+}
+
+#recent-posts-3.widget.widget_recent_entries{
+	
+	width:30em;
+	background-color: pink;
+	float:right;
+}
+
+
+#main {
+
+color:white;
+padding: 0 0 0 0;
+opacity: 0.95;
+float: center;
+border: 0 0 0 0; 
+background: black;
+}
+
+#main.site-main{
+	margin-top: 9em;
+	margin-left:2em;
+	padding-left:2em;
+	width: 80%;
+
+	
+}
+
+.gallery{
+	width:40em;
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+.page-content, .entry-content, .entry-summary{
+	display:inline-block;
+	}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+
+/*----------------------------------
+media screens 
+------------------------------------*/
+@media screen and (max-width: 600px){
+.sidebar-widgets
+{width: 20%;
+margin-left: 50%;
+padding: auto;}
+clear: both;}
+
+
+
+@media screen and (max-width: 480px){
+	button.menu-toggle {
+		display: block;
+		color: black;
+		background-color: white;
+		float:center;
+		font-size: 2em;
+		padding:13px;
+		}
+	#main.site-main{
+	width:97%;
+	}
+	nav.navigation.post-navigation{
+	display:none;
+	}
+	 p {
+	margin-left:-7% !important;
+	padding-left:10px !important;
+	
+	}	
+	img.size-medium.wp-image-1995.aligncenter{
+	margin-right: 0.5px;
+	}
+figure.gallery-item{
+margin:4%;
+float:inherit;
+}
+    textarea#comment{
+    width:60%;
+    }
+    input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea {
+    width:60%;
+    }
+	img.size-medium.wp-image-1976{
+	margin-right:0.5px;
+	}
+	article#div-comment-42{
+	width: 68%;
+	}
+	.backstretch{
+	
+	width:100%  !important;
+	}
+	#primary.content-area{
+	margin-top: 45% !important;
+	}
+	#masthead.site-header{
+	max-width:100% ;
+	}
+	#main,.site-branding,.sidebar-widgets,
+	.container,.site-main,#content, header,
+	.site-footer, #colophon, .entry-content,
+	.page .entry-content, .entry-footer
+	{
+	float:left;
+	max-width: 100% !important ;
+	vertical-align: middle;
+	margin-top:auto;
+	}
+
+#colophon.site-footer{
+	width:100% !important;
+	clear:both;
+	margin-top:90%;
+	}
+
+aside#secondary{
+display:none;
+} 
+
+#footer-widgets
+{
+display: block;
+
+} 
+
+#widget-foot{
+margin: auto;}
+
+#colophon .widget{
+margin:auto;
+display: block;
+width: auto;}
+
+
+.site-description,
+.site-title
+{margin: auto;
+padding: 0;
+display: block;
+position: relative;
+}
+
+.main-navigation ul li{
+max-width: 100%;
+width: 100%;
+position: relative;
+display:block ;
+}
+
+ 
+ [id^=menu-item]{
+ display: block;
+ -webkit-columns: 1;
+ }
+
+
+
+
+		
+		}
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+margin: 0 0 1.5em;
+width: 20em;
+padding-left: 2em;
+background-color: transparent;
+}
+
+/* Make sure select elements fit in widgets. */
+.widget select {
+max-width: 100%;
+}
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+## Asides
+--------------------------------------------------------------*/
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+	float:left;
+	width: 20em;
+}
+
+#comment{
+	width: 20em;
+	height: 5em;
+	
+	
+}
+
+#respond.comment-respond{
+	width: auto;
+	
+
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+	width:100%;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+	margin-left:-0.625em; //-10px/16px//
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+Responsive
+--------------------------------------------------------------*/
+
+.site-main {
+	margin: 1.4em;
+	font-size: .8em;
+	line-height: 1.6em;
+}
+
+/* This gives additional margin for the site on mobile devices */
+
+@media screen and (min-width: 30em) {
+
+	.site-main{
+		margin: 1.8em;
+	}
+
+}
+
+/* This changes the font size of main site content to make it easier to read on mobile devices */
+
+@media screen and (min-width: 40em) {
+
+	.site-main{
+		font-size: 1em;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: block;
+			}
+	#primary.content-area{
+	margin-top: -35%;
+	}		
+	#main.site-main{
+	
+	margin-top:130%
+	}
+	p{
+	width: 80%;
+	}
+	.main-navigation{
+		padding-bottom:0.5em;
+	}
+	.main-navigation ul {
+		display: none;
+	}
+	#primary,
+	#secondary{
+		float:none;
+		padding: 0;
+		width: 90%;
+	}
+	.inner {
+		padding-right: 25px;
+		padding-left: 25px;
+	}
+}
+
+/* Menu Responsive */
+
+/* Hides menu toggle button */
+@media screen and (min-width: 800px) {
+	.menu-toggle {
+		display: none;
+	}
+}
+
+/* Changes menu format to vertical and hides under a toggle button */
+
+@media screen and (max-width: 800px){
+
+	#primary-menu {
+		display: inline-block;
+		margin:2em;
+	}
+
+	.toggled #primary-menu{
+		display:block;
+	}
+
+	.menu-toggle,
+	.main-navigation.toggled #primary-menu
+	{
+		display: block;
+	}
+
+	.main-navigation #menu-main,
+	.main-navigation #menu-social
+	{
+		float: none;
+		text-align: center;
+		width: 100%;
+	}
+
+	.menu-toggle
+	{
+		display:block;
+		color: #000;
+		width: auto;
+		margin: auto;
+		text-align: center;
+	}
+
+	.main-navigation ul
+	{
+		display: none;
+	}
+
+	.main-navigation li
+	{
+		display: block;
+		width: 100%;
+		border-bottom: solid 1px;
+		border-color: #FFF;
+	}
+
+	#primary-menu > li:hover .sub-menu{
+		display: block;
+		color:white;
+	}
+
+	.sidebar-widgets
+	{
+	background-color: #cdcdcd;
+	}
+
+	.blog #primary, .single #primary, .archive #primary
+	{
+		width: 100%;
+		margin:10px;
+	}
+
+	#secondary
+	{
+		width:100%;
+	}
+
+}

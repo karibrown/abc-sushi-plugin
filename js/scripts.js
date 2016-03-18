@@ -1,0 +1,1 @@
+jQuery(document).ready(function($) {   $.backstretch("https://phoenix.sheridanc.on.ca:2083/cpsess5601172513/frontend/x3/filemanager/showfile.html?file=thimage.jpg&fileop=&dir=%2Fhome%2Fccit3485%2Fpublic_html%2Fwp-content%2Fthemes%2Fassignment_2%2Fimg&dirop=&charset=&file_charset=_DETECT_&baseurl=&basedir=");});
