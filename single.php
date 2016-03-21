@@ -11,7 +11,12 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+<?php 
 
+/* taken from http://www.wpbeginner.com/beginners-guide/how-to-add-featured-image-or-post-thumbnails-in-wordpress/ */
+the_post_thumbnail(); 
+
+?>
 		<?php
 		while ( have_posts() ) : the_post();
 
