@@ -229,3 +229,9 @@ function food_reviews_init() {
     register_post_type( 'food-reviews', $args );
 }
 add_action( 'init', 'food_reviews_init' );
+
+
+
+/* add featured image and setting the size of the image */
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 50, 50);
