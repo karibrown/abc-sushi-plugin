@@ -146,7 +146,7 @@ function diww_include_post($atts) {
 	$output = '';
 	query_posts("p=$thepostid");
 	if (have_posts()) : while (have_posts()) : the_post();
-		$output .= get_the_content($post->ID);
+		$output .= get_the_title()."        ".get_the_content($post->ID);
 	endwhile; else:
 		// failed, output nothing
 	endif;
