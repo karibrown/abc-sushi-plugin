@@ -136,8 +136,9 @@ function add_signature($text) {
     $text .= '<div class="signature"><img src="http://phoenix.sheridanc.on.ca/~ccit3485/wp-content/themes/abc-sushi/img/i-love-sushi.jpg"></div>';
     return $text;
 }
+
 /* ----------------------------------
-DISLPAY POST/PAGE WITHIN PAGE/POST
+DISLPAY MAIN MENU POST/PAGE WITHIN PAGE/POST
 -----------------------------------*/
 // taken from https://www.doitwithwp.com/include-a-post-within-a-post-or-page/
 function diww_include_post($atts) {
@@ -155,9 +156,11 @@ function diww_include_post($atts) {
 add_shortcode("include_post", "diww_include_post");
 
 /* ------------------------------------
- DISPLAYS POST IDS IN WORDPRESS  
+ DISPLAYS POST IDS IN WORDPRESS  WHEN LOGGED INTO WORDPRESS
  TAKEN FROM https://www.doitwithwp.com/add-a-column-to-easily-note-the-post-id/
  --------------------------------------- */
+ 
+ 
 // ADD COLUMN IN EDITOR FOR POST ID //
 function posts_columns_id($defaults){
     $defaults['wps_post_id'] = __('ID');
@@ -172,5 +175,55 @@ add_filter('manage_posts_columns', 'posts_columns_id', 5);
 add_action('manage_posts_custom_column', 'posts_custom_id_columns', 5, 2);
 add_filter('manage_pages_columns', 'posts_columns_id', 5);
 add_action('manage_pages_custom_column', 'posts_custom_id_columns', 5, 2);
+
+
+
+
+/* -----------------------------------------
+ PRINTS CUSTOM POST TYPE 
+  TAKEN FROM http://www.tcbarrett.com/2012/11/wordpress-shortcode-to-make-a-list-of-your-custom-post-type-posts/#.VvDdUD-Kwxh
+  ---------------------------------------------*/
+  
+  
+add_shortcode( 'custom_posts', 'tcb_sc_custom_posts' );
+function tcb_sc_custom_posts( $atts ){
+  global $post;
+  $default = array(
+    'type'      => 'product',
+    'post_type' => '',
+    'limit'     => 10,
+    'status'    => 'publish'
+  );
+  $r = shortcode_atts( $default, $atts );
+  extract( $r );
+
+  if( empty($post_type) )
+    $post_type = $type;
+
+  $post_type_ob = get_post_type_object( $post_type );
+  if( !$post_type_ob )
+    return '<div class="warning"><p>No such post type <em>' . $post_type . '</em> found.</p></div>';
+
+  $return = '<h3>' . $post_type_ob->name . '</h3>';
+
+  $args = array(
+    'post_type'   => $post_type,
+    'numberposts' => $limit,
+    'post_status' => $status,
+  );
+
+  $posts = get_posts( $args );
+  if( count($posts) ):
+    $return .= '<ul>';
+    foreach( $posts as $post ): setup_postdata( $post );
+      $return .= '<li>' . get_the_title() . '</li>';
+    endforeach; wp_reset_postdata();
+    $return .= '</ul>';
+  else :
+    $return .= '<p>No posts found.</p>';
+  endif;
+
+  return $return;
+}
 
 ?>
