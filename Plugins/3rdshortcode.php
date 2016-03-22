@@ -72,7 +72,10 @@ function googlemap($atts, $content = null) {
 add_shortcode("googlemap", "googlemap");
 
 
-/* most recent 5 posts taken from https://generatewp.com/shortcodes/?clone=recent-posts-shortcode*/
+/* --------------------------------------
+ DISPLAYS MOST RECENT POSTS 
+ taken from https://generatewp.com/shortcodes/?clone=recent-posts-shortcode
+ ---------------------------------------------------*/
 
 // Add Shortcode
 function recent_posts_shortcode( $atts , $content = null ) {
@@ -81,6 +84,7 @@ function recent_posts_shortcode( $atts , $content = null ) {
 	extract( shortcode_atts(
 		array(
 			'posts' => '5',
+			
 		), $atts )
 	);
 
@@ -90,6 +94,8 @@ function recent_posts_shortcode( $atts , $content = null ) {
 	while ( $the_query->have_posts() ):
 		$the_query->the_post();
 		$output .= '<li>' . get_the_title() . '</li>';
+		
+		
 	endwhile;
 	wp_reset_postdata();
 	$output .= '</ul>';
