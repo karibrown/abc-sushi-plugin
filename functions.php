@@ -192,17 +192,6 @@ function cd_custom_gravatar ($avatar_defaults) {
 
 
 
-/* Add Signature Image after single post code taken from http://www.1dogwoof.com/2013/11/how-to-add-a-signature-to-all-wordpress-posts.html
-and image taken from http://www.freeimages.com/search/sushi?free=1*/ 
-
-add_filter('the_content','add_signature', 1);
-function add_signature($text) {
- global $post;
- if(($post->post_type == 'page')) 
-    $text .= '<div class="signature"><img src="http://phoenix.sheridanc.on.ca/~ccit3485/wp-content/themes/abc-sushi/img/i-love-sushi.jpg"></div>';
-    return $text;
-}
-
 
 function food_reviews_init() {
     $args = array(
@@ -232,6 +221,6 @@ add_action( 'init', 'food_reviews_init' );
 
 
 
-/* add featured image and setting the size of the image */
+/* add featured image and setting the size of the image http://www.1dogwoof.com/2013/11/how-to-add-a-signature-to-all-wordpress-posts.html*/
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 50, 50);
