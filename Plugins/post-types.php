@@ -61,6 +61,7 @@ function my_recent_posts_shortcode($atts){
    array( 'orderby' => 'date', 'posts_per_page' => '4')
  );
 $list = '<ul class="recent-posts">';
+/*loop begins*/
 while($q->have_posts()) : $q->the_post();
  $list .= '<li>' . get_the_date() . '<a href="' . get_permalink() . '">' . get_the_title() . '</a>' . '<br />' . get_the_excerpt() . '</li>';
 endwhile;
