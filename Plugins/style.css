@@ -1,0 +1,64 @@
+/*
+Description: css file for plugin styling 
+*/
+
+
+/* -------widgets----- */
+/*archive button*/
+section#archives-2{
+	float:left !important;
+	margin-right:-10%;
+}
+/*archive click [Custom archives] */
+section#abc_latest_custom_posts-2{
+	float:right;
+	padding-left:0;
+	width:100%;
+}
+/*meta*/ 
+section#meta-2{
+	display:inline-block;
+	margin:0;
+	float:left;
+}
+/*fun stuff */
+section#pages-3{
+	padding: 0;
+	margin-right:-10%;
+	display: inline-block;	
+}
+section#pages-3 ul{
+font-size: 0.8em;
+}
+/*titles*/
+.widget-title{
+font-size:1.5em;
+}
+/*all widgets*/
+.widget{
+	max-width: 34%;
+	}
+/* widget background area*/
+aside#secondary{
+padding-bottom: 10%;
+}
+/*Responsive Design on devices 800px*/
+@media screen and (max-width: 800px)
+{
+	.widget{
+	margin: 26%;
+	}
+	section#archives-2{
+	display: block;
+	}
+	section#pages-3{
+	display: block;
+	}
+	section#abc_latest_custom_posts-2{
+	display:block;
+	}
+	section#yearly_archives-2{
+	display:block;
+	}
+	
+}
