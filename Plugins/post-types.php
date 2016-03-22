@@ -54,5 +54,18 @@ function add_my_post_types_to_query( $query ) {
 	return $query;
 }
 
+/* Adds shortcode to display latest posts */
+function my_recent_posts_shortcode($atts){
+ $q = new WP_Query(
+   array( 'orderby' => 'date', 'posts_per_page' => '4')
+ );
+$list = '<ul class="recent-posts">';
+while($q->have_posts()) : $q->the_post();
+ $list .= '<li>' . get_the_date() . '<a href="' . get_permalink() . '">' . get_the_title() . '</a>' . '<br />' . get_the_excerpt() . '</li>';
+endwhile;
+wp_reset_query();
+return $list . '</ul>';
+}
+add_shortcode('recent-posts', 'my_recent_posts_shortcode');
 
 ?>
