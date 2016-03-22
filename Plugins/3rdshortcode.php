@@ -54,8 +54,12 @@ add_shortcode( 'social', 'social' );
 
 
 
-/* GOOGLE AD taken from http://wptricks.net/how-to-inserting-google-maps-into-wordpress/  */ 
-//Google Maps Shortcode
+
+/*----------------------------------------------------
+  DISPLAYS GOOGLE MAP 
+  taken from http://wptricks.net/how-to-inserting-google-maps-into-wordpress/  
+  ----------------------------------------------------*/
+
 
 function googlemap($atts, $content = null) {
    extract(shortcode_atts(array(
