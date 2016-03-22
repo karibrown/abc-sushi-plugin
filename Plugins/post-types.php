@@ -3,6 +3,7 @@
 Description: This plugin registers a custom post type for featured products.
 License: GPLv2
 Authors: Dewshan Sarathchandra, Amrita Singh, Kariann Brown 
+Code referenced from: www.wpbeginner.com/wp-tutorials/how-to-create-custom-post-types-in-wordpress/
 */
 
 /* ---------------------------------
