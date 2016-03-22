@@ -170,9 +170,12 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-/* caliing the widget file from the inc folder */ 
+/* call the widget file from the inc folder */ 
 
 require get_stylesheet_directory() .'/inc/thewidget.php';
+
+// Call the file 'latest-custom-posts' for new widget
+require get_stylesheet_directory() . '/inc/latest-custom-posts.php';
 
 /*-------------------------------------- 
 added features 
