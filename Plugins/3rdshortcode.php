@@ -104,16 +104,30 @@ function recent_posts_shortcode( $atts , $content = null ) {
 }
 add_shortcode( 'recent-posts', 'recent_posts_shortcode' );
 
-/* shows date on each posts taken from https://www.doitwithwp.com/insert-the-current-datetime-in-posts-or-pages/ */
+
+/* --------------------------------------------
+ shows date on each posts 
+ taken from https://www.doitwithwp.com/insert-the-current-datetime-in-posts-or-pages/
+ ---------------------------- */
 function showdate(){
-    return date('F jS, Y');
+if ( has_post_format( 'standard' )) {
+       return the_time('F j, Y');
+} else if (has_post_format('gallery')) {
+       return the_time('l jS F Y h:i:s A');
+} else if (has_post_format('image')) {
+       return the_time('l');
+} 
+ else  return date('F jS, Y');
 }
 add_shortcode( 'date', 'showdate' );
 
 
 
-/* Add Signature Image after single post code taken from http://www.1dogwoof.com/2013/11/how-to-add-a-signature-to-all-wordpress-posts.html
-and image taken from http://www.freeimages.com/search/sushi?free=1*/ 
+/* ----------------------------------------------
+ Add Signature Image after single post code 
+  taken from http://www.1dogwoof.com/2013/11/how-to-add-a-signature-to-all-wordpress-posts.html
+and image taken from http://www.freeimages.com/search/sushi?free=1
+---------------------------------------------------------------------------------*/ 
 
 add_filter('the_content','add_signature', 1);
 function add_signature($text) {
@@ -122,8 +136,6 @@ function add_signature($text) {
     $text .= '<div class="signature"><img src="http://phoenix.sheridanc.on.ca/~ccit3485/wp-content/themes/abc-sushi/img/i-love-sushi.jpg"></div>';
     return $text;
 }
-
-
 /* ----------------------------------
 DISLPAY POST/PAGE WITHIN PAGE/POST
 -----------------------------------*/
