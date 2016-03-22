@@ -8,8 +8,10 @@
 *
 * Version: 2.0
 */
-// taken from lab 2 fucntions.php and changed the directry path taken from "https://codex.wordpress.org/Function_Reference/get_stylesheet_directory_uri"
-// this function enqueue's the style css for the plugin 
+/* --------------------------
+this function enqueue's the style css for the plugin 
+-------------------------------*/
+//taken from lab 2 fucntions.php and changed the directry path taken from "https://codex.wordpress.org/Function_Reference/get_stylesheet_directory_uri"
 function enqueue_pl(){
 wp_enqueue_style( 'new-css', get_stylesheet_directory_uri()."/css/style.css" );
 }
