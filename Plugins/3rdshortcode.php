@@ -22,7 +22,7 @@ add_action('wp_enqueue_scripts', 'enqueue_pl');
 // Add Shortcode that changes color of the text taken from "http://mysitemyway.com/docs/index.php?title=Fancy_Links_and_Buttons" and lecture 7 slides available on "https://slate.sheridancollege.ca/d2l/le/content/266318/viewContent/4290597/View"
 // creates prints a text and another fucntion button() is called here,  which creats a button and links to an external url, the user can change the attributes to suit their needs 
 function user_color( $atts , $content = null ) {
-return '<div class="change"><p>' . $content . '</br>'. button($content).'</p></div>';
+return '<div class="change"><p>' . $content . '</br>'. social($content).'</p></div>';
 }
 add_shortcode( 'user_color', 'user_color' );
 
