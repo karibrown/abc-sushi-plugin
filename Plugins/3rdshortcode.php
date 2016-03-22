@@ -4,7 +4,7 @@
 * Plugin Name: 3rd assignment-shortcodes 
 * Plugin URI: 
 * Description: shortcodes used to enhance the clients website 
-* Author: Amrita Singh 
+* Author: Amrita Singh, KariAnn, Dewshan
 *
 * Version: 2.0
 */
