@@ -216,7 +216,7 @@ function tcb_sc_custom_posts( $atts ){
   if( count($posts) ):
     $return .= '<ul>';
     foreach( $posts as $post ): setup_postdata( $post );
-      $return .= '<li>' . get_the_title() . '</li>';
+      $return .= '<li>' .get_the_title()  . '<a href="' . get_permalink() . '">' .get_the_date()  . '</a>' . '<br />' . get_the_excerpt() . '</li>';
     endforeach; wp_reset_postdata();
     $return .= '</ul>';
   else :
