@@ -1,0 +1,76 @@
+/*
+Theme Name: abc-sushi
+Theme URI: http://underscores.me/
+Author: Kariann Brown, Amrita Singh, Dewshan Sarathchndra
+Author URI: http://underscores.me/
+Description: Assignment 2: Restaurant WordPress Theme
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: abc-sushi
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something mol, have fun, and share what you've learned with others.
+
+abc-sushi is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Asides
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+
+a.the-link{
+	background-color:blue;
+	color:white;
+	padding : 1em;
+	
+}
+
+ul,ol{
+	padding-right: 3.5em;
+	margin:0 0 1.5em 1em;
+	list-style-type: circle;
+}
+img.attachment-post-thumbnail.size-post-thumbnail.wp-post-image{
+	margin-top: 5%;
+	margin-left: 10%;
+}
+a.the-link:hover{
+background-color: rgba(16, 16, 16, 0.64)
+}
+@media screen and (max-width: 800px){
+	.widgets{
+		display: inline-block;
+	}
+
+}
+	
