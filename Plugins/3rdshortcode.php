@@ -29,8 +29,11 @@ add_shortcode( 'user_color', 'user_color' );
 
 
 
-//adds a section from an external source taken from lecture 7 slides available at "https://slate.sheridancollege.ca/d2l/le/content/266318/viewContent/4290597/View"
-// creates a button who's attributes can be changed by the user
+ 
+/*---------------------------------------
+creates a button who's attributes can be changed by the user
+taken from lecture 7 slides available at "https://slate.sheridancollege.ca/d2l/le/content/266318/viewContent/4290597/View"
+------------------------------------------------*/
 function social( $atts , $content = null ) {
 extract( shortcode_atts(
 array(
@@ -38,15 +41,18 @@ array(
 'link' => 'https://twitter.com',
 'linktxt' => 'Button Text',
 'buttoncolor'=> 'Color',
-'buttontext'=>' button text',
+'buttontext'=> 'button text',
 
 
 ), $atts )
 );
 return '<div class="userbutton" ><h2>'. $title . '</h2><div class="link-txt">'. $content.
-'</div><p><a href="' . $link .'" class="the-link">' . $linktxt . '</a></p></div>';
+'</div><p><a href="' . $link .'" class="the-link">' . $linktxt .'</a></p></div>';
 }
 add_shortcode( 'social', 'social' );
+
+
+
 
 /* GOOGLE AD taken from http://wptricks.net/how-to-inserting-google-maps-into-wordpress/  */ 
 //Google Maps Shortcode
