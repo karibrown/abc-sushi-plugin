@@ -105,4 +105,43 @@ function add_signature($text) {
     $text .= '<div class="signature"><img src="http://phoenix.sheridanc.on.ca/~ccit3485/wp-content/themes/abc-sushi/img/i-love-sushi.jpg"></div>';
     return $text;
 }
+
+
+/* ----------------------------------
+DISLPAY POST/PAGE WITHIN PAGE/POST
+-----------------------------------*/
+// taken from https://www.doitwithwp.com/include-a-post-within-a-post-or-page/
+function diww_include_post($atts) {
+  $thepostid = intval($atts[id]);
+	$output = '';
+	query_posts("p=$thepostid");
+	if (have_posts()) : while (have_posts()) : the_post();
+		$output .= get_the_content($post->ID);
+	endwhile; else:
+		// failed, output nothing
+	endif;
+	wp_reset_query();
+	return $output;
+}
+add_shortcode("include_post", "diww_include_post");
+
+/* ------------------------------------
+ DISPLAYS POST IDS IN WORDPRESS  
+ TAKEN FROM https://www.doitwithwp.com/add-a-column-to-easily-note-the-post-id/
+ --------------------------------------- */
+// ADD COLUMN IN EDITOR FOR POST ID //
+function posts_columns_id($defaults){
+    $defaults['wps_post_id'] = __('ID');
+    return $defaults;
+}
+function posts_custom_id_columns($column_name, $id){
+  if($column_name === 'wps_post_id'){
+        	echo $id;
+    }
+}
+add_filter('manage_posts_columns', 'posts_columns_id', 5);
+add_action('manage_posts_custom_column', 'posts_custom_id_columns', 5, 2);
+add_filter('manage_pages_columns', 'posts_columns_id', 5);
+add_action('manage_pages_custom_column', 'posts_custom_id_columns', 5, 2);
+
 ?>
