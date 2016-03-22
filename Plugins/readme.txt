@@ -157,6 +157,20 @@ This function[add_filter] will add a personal signature to the given posts locat
 The function [hide_email_from_scrapers], protects emails from spams and risks similar to these ones. Protective measures used to ensure the users safety
 		
 
+
+
+
+-------------------------post-types.php-------------------------------------------
+
+In this plug in, its purpose is to register custom post types for featured products. Through the creation of new functions and setting an $attr to the called function it provides the user with the ability to change and modify any settings within the custom post type, given that they have a $labels value. Within the arrays listed the user is able to merely place inline text into their custom post type and change the quoted attributes. We have given them the opporunity to personalize the creation of the posts presented. In this case knowing the labelling and function titles is not necessary as this array $labels informs the computer of the labels for the given post type. When using this plug in on your site it is made to display on the front page of the site. It is located below the original posts of the content. In activating this the custom post it prints out titles text and permalinks appropriately. 
+
+Ways the user completes echoing these plug ins are by modifying the attributes apporpriately . For example in Artsy sushi it modifies function 'recent-posts' posts originally was limited to maximum 5 posts however it was changed to [recent-posts posts="2" ] changing the output text to be two items in the list . Similar procedures would be required when changing other functions provided that there are set attributes stated within our plug in. Call a function and then specify the change within brackets 
+
+
+
+
+ 
+
 References: 
 https://codex.wordpress.org/Function_Reference/get_stylesheet_directory_uri
 http://mysitemyway.com/docs/index.php?title=Fancy_Links_and_Buttons
@@ -170,12 +184,6 @@ https://www.doitwithwp.com/obfuscating-email-addresses-wordpress/
 http://wordpress.stackexchange.com/questions/52246/using-thumbnail-functions-inside-a-shortcode
 //www.doitwithwp.com/add-a-column-to-easily-note-the-post-id/
 http://www.tcbarrett.com/2012/11/wordpress-shortcode-to-make-a-list-of-your-custom-post-type-posts/#.VvDdUD-Kwxh
-
-
-
--------------------------post-types.php-------------------------------------------
-
-In this plug in, its purpose is to register custom post types for featured products. Through the creation of new functions and setting a $attr to the called function it provides the user with the ability to change and modify any settings within the custom post type, given that they have a $labels value. Within the arrays listed the user is able to merely place inline text into their custom post type and change the quoted attributes. We have given them the opporunity to personalize the creation of the posts presented. In this case knowing the labelling and function titles is not necessary as this array $labels informs the computer of the labels for the given post type. When using this plug in on your site it is made to display on the front page of the site. It is located below the original posts of the content. In activating this the custom post prints out title of  
 
 
 
