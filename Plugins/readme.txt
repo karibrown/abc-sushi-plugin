@@ -189,5 +189,3 @@ http://www.tcbarrett.com/2012/11/wordpress-shortcode-to-make-a-list-of-your-cust
 
  
 
-References:
-
